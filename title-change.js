@@ -1,21 +1,16 @@
-$(function() {
-    var pageTitle = $("title").text();
-    var titleCount = 0;
-    $(window).blur(function() {
-        titleCount++;
-        if (titleCount == 1)
-            $("title").text("Nereye gittin..");
-        else if (titleCount == 2)
-            $("title").text("Geri gel :(");
-        else if (titleCount == 3)
-            $("title").text("Gelsene :(");
-        else if (titleCount == 4)
-            $("title").text("Küserim bak :(");
-        else if (titleCount > 4)
-            $("title").text("Küstüm -_-");
+$(() => {
+    const title = $("title").text();
+    const count = 0;
+    $(window).blur(() => {
+        count++;
+        if (count == 1) $("title").text("Where you go?.");
+        else if (count == 2) $("title").text("Come back :(");
+        else if (count == 3) $("title").text("Come on :(");
+        else if (count == 4) $("title").text("I'm sorry :(");
+        else if (count > 4) $("title").text("You broke me -_-");
     });
-    $(window).focus(function() {
-        $("title").text(pageTitle);
-        if (titleCount > 4) $("title").text(":))) " + pageTitle);
+    $(window).focus(() => {
+        $("title").text(title);
+        if (count > 4) $("title").text(":))) " + title);
     });
 });
